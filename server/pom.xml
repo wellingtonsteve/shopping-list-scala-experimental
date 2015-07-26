@@ -14,6 +14,7 @@
     
     <modules>
         <module>server-core</module>
+        <module>server-rest</module>
     </modules>
 
 
