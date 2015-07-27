@@ -6,26 +6,25 @@ import org.scalatest.FunSpecLike
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.mock.MockitoSugar
 import org.scalatra.test.scalatest.ScalatraSuite
+import uk.co.stevewellington.shoppinglist.actions.AddItemByNameToShoppingList
+import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @RunWith(classOf[JUnitRunner])
 class RestServerTest extends ScalatraSuite with FunSpecLike with MockitoSugar {
 
-  val someBusinessLogicAction = mock[SomeBusinessLogicAction]
+  val addItemByNameToShoppingListAction = mock[AddItemByNameToShoppingList]
   
-  addServlet(new RestServer(someBusinessLogicAction), "/*")
+  addServlet(new RestServer(addItemByNameToShoppingListAction), "/*")
   
   describe("Rest Server") {
-    it("should do some action") {
-      post("do/some/action") {
-        verify(someBusinessLogicAction).doAction()
+    it("should add item by name to list") {
+      post("items/Banana") {
+        verify(addItemByNameToShoppingListAction).addItemByNameToShoppingList(new ItemName("Banana"))
       }
     }
     
-    it("should do some other action") {
-      post("do/some/otheraction") {
-        verify(someBusinessLogicAction).doOtherAction()
-      }
-    }
+    // TODO: test response codes, errors
+    
   }
 
 }
