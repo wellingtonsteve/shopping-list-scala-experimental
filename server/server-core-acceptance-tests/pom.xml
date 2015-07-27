@@ -9,14 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>server-core</artifactId>
-    
+    <artifactId>server-core-acceptance-tests</artifactId>
+
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.4</version>
-            <scope>provided</scope>
+            <groupId>uk.co.stevewellington.shoppinglist</groupId>
+            <artifactId>server-core</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 

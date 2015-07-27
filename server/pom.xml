@@ -15,6 +15,7 @@
     <modules>
         <module>server-core</module>
         <module>server-rest</module>
+        <module>server-core-acceptance-tests</module>
     </modules>
 
 
