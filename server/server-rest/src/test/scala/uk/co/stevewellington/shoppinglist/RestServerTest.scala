@@ -16,10 +16,16 @@ class RestServerTest extends ScalatraSuite with FunSpecLike with MockitoSugar {
   
   addServlet(new RestServer(addItemByNameToShoppingListAction), "/*")
   
-  describe("Rest Server") {
-    it("should add item by name to list") {
-      post("items/Banana") {
+  describe("When adding an Item by name") {
+    it("an Item should be created in the Store") {
+      post("/items/Banana") {
         verify(addItemByNameToShoppingListAction).addItemByNameToShoppingList(new ItemName("Banana"))
+      }
+    }
+    
+    it("the response code should be 200") {
+      post("/items/Banana") {
+        status should equal(200)
       }
     }
     
