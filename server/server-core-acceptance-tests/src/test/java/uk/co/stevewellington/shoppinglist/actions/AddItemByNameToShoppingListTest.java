@@ -1,7 +1,10 @@
 package uk.co.stevewellington.shoppinglist.actions;
 
+import com.flextrade.jfixture.annotations.Fixture;
+import com.flextrade.jfixture.rules.FixtureRule;
 import com.google.inject.Injector;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -15,8 +18,10 @@ import static org.mockito.Mockito.verify;
 @RunWith(MockitoJUnitRunner.class)
 public class AddItemByNameToShoppingListTest {
 
+    @Rule public FixtureRule fr = FixtureRule.initFixtures();
+
     @Mock ItemStore itemStore;
-    @Mock ItemName itemName; //TODO: JFixture?
+    @Fixture ItemName itemName;
 
     private AddItemByNameToShoppingList addItemByNameToShoppingList;
 

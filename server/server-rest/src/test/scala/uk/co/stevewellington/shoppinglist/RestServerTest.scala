@@ -28,9 +28,6 @@ class RestServerTest extends ScalatraSuite with FunSpecLike with MockitoSugar {
                 status should equal(200)
             }
         }
-
-        // TODO: test response codes, errors
-
     }
 
 }
