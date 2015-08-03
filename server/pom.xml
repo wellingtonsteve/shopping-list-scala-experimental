@@ -17,6 +17,7 @@
         <module>server-rest</module>
         <module>server-core-acceptance-tests</module>
         <module>in-memory-database</module>
+        <module>server-main</module>
     </modules>
 
 
