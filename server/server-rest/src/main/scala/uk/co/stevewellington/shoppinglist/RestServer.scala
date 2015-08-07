@@ -10,5 +10,9 @@ class RestServer(addItemByNameToShoppingListAction: AddItemByNameToShoppingList)
         val itemName = new ItemName(params("itemName"))
         addItemByNameToShoppingListAction.addItemByNameToShoppingList(itemName)
     }
+    
+    get("/hello") {
+        "hi"
+    }
 
 }
