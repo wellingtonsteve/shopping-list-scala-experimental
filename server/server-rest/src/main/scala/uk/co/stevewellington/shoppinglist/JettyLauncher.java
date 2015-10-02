@@ -1,22 +1,21 @@
 package uk.co.stevewellington.shoppinglist;
 
+import com.google.inject.servlet.GuiceFilter;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.webapp.WebAppContext;
-import org.scalatra.servlet.ScalatraListener;
+import org.eclipse.jetty.servlet.ServletContextHandler;
 
-import static org.scalatra.servlet.ScalatraListener.LifeCycleKey;
+import javax.servlet.DispatcherType;
+
+import static java.util.EnumSet.allOf;
 
 public class JettyLauncher {
 
     public static void main(String[] args) throws Exception {
         Server server = new Server(8080);
-        WebAppContext context = new WebAppContext();
-        context.setContextPath("/");
-        context.setResourceBase("src/main/webapp");
-        context.setInitParameter(LifeCycleKey(), "uk.co.stevewellington.shoppinglist.ScalatraBootstrap");
-        context.addEventListener(new ScalatraListener());
-        context.addServlet(RestServer.class, "/");
-        server.setHandler(context);
+        ServletContextHandler handler = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
+        handler.addFilter(GuiceFilter.class, "/*", allOf(DispatcherType.class));
+        handler.addEventListener(new MyGuiceServletConfig());
+        server.setHandler(handler);
         server.start();
         server.join();
     }

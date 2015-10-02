@@ -1,6 +1,5 @@
 package uk.co.stevewellington.shoppinglist.infrasctructure;
 
-import com.google.common.collect.Sets;
 import uk.co.stevewellington.shoppinglist.model.ItemName;
 
 import java.util.Set;
