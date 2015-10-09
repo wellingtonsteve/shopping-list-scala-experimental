@@ -1,6 +1,5 @@
 package uk.co.stevewellington.shoppinglist;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.servlet.GuiceServletContextListener;
 
