@@ -8,9 +8,9 @@ import javax.servlet.DispatcherType;
 
 import static java.util.EnumSet.allOf;
 
-public class JettyLauncher {
+class JettyLauncher {
 
-    public static void main(String[] args) throws Exception {
+    static void main(String[] args) throws Exception {
         Server server = new Server(8080);
         ServletContextHandler handler = new ServletContextHandler(server, "/", ServletContextHandler.SESSIONS);
         handler.addFilter(GuiceFilter.class, "/*", allOf(DispatcherType.class));
