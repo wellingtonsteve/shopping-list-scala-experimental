@@ -5,7 +5,7 @@ import uk.co.stevewellington.shoppinglist.infrasctructure.ItemStore
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 class AddItemByNameToShoppingList @Inject()(itemStore: ItemStore) {
-    
-    def addItemByNameToShoppingList(itemName : ItemName) = itemStore.createItemName(itemName)
+
+  def addItemByNameToShoppingList(itemName: ItemName) = itemStore.createItemName(itemName)
 
 }

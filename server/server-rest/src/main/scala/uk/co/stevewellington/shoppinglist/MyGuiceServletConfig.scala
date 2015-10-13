@@ -5,7 +5,7 @@ import com.google.inject.servlet.GuiceServletContextListener
 
 //noinspection JavaAccessorMethodOverridenAsEmptyParen
 class MyGuiceServletConfig extends GuiceServletContextListener {
-    
-    override def getInjector() = createInjector(new ApplicationServletModule)
-    
+
+  override def getInjector() = createInjector(new ApplicationServletModule)
+
 }
