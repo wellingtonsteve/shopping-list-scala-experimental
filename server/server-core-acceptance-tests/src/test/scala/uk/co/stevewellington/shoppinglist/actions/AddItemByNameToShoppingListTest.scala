@@ -5,13 +5,11 @@ import com.google.inject.{AbstractModule, Guice}
 import org.junit.runner.RunWith
 import org.mockito.Mockito._
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.mock.MockitoSugar
-import org.scalatest.{FunSpecLike, Suite}
 import uk.co.stevewellington.shoppinglist.infrasctructure.ItemStore
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @RunWith(classOf[JUnitRunner])
-class AddItemByNameToShoppingListTest extends Suite with FunSpecLike with MockitoSugar {
+class AddItemByNameToShoppingListTest extends UnitSpec {
 
   val fixture = new JFixture
 
