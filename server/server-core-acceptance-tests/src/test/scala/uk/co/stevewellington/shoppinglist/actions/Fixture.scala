@@ -1,7 +1,6 @@
 package uk.co.stevewellington.shoppinglist.actions
 
 import com.flextrade.jfixture.JFixture
-import org.mockito.stubbing.Answer
 
 import scala.reflect.Manifest
 
