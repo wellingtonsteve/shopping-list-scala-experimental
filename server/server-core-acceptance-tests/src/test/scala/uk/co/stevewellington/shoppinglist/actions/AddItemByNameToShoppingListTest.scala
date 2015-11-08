@@ -5,11 +5,12 @@ import com.google.inject.Guice.createInjector
 import org.junit.runner.RunWith
 import org.mockito.Mockito._
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.mock.MockitoSugar
 import uk.co.stevewellington.shoppinglist.infrasctructure.ItemStore
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @RunWith(classOf[JUnitRunner])
-class AddItemByNameToShoppingListTest extends UnitSpec with Fixture with Guice {
+class AddItemByNameToShoppingListTest extends UnitSpec with MockitoSugar with Fixture with Guice {
 
   val itemStore = mock[ItemStore]
   val itemName = fixture[ItemName]

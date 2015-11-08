@@ -3,11 +3,12 @@ package uk.co.stevewellington.shoppinglist
 import org.junit.runner.RunWith
 import org.mockito.Mockito.verify
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.mock.MockitoSugar
 import uk.co.stevewellington.shoppinglist.actions.AddItemByNameToShoppingList
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @RunWith(classOf[JUnitRunner])
-class RestServerTest extends ScalatraSpec {
+class RestServerTest extends ScalatraSpec with MockitoSugar {
 
   val addItemByNameToShoppingListAction = mock[AddItemByNameToShoppingList]
 
