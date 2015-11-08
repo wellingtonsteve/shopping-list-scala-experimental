@@ -18,8 +18,9 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.flextrade.jfixture</groupId>
-            <artifactId>jfixture</artifactId>
+            <groupId>uk.co.stevewellington.shoppinglist</groupId>
+            <artifactId>test-util</artifactId>
+            <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
