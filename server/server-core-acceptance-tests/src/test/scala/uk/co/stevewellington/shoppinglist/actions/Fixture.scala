@@ -9,7 +9,7 @@ trait Fixture {
   val fixture = new JFixture
 
   def fixture[T <: AnyRef](implicit manifest: Manifest[T]): T = {
-    fixture.create(manifest.erasure.asInstanceOf[Class[T]])
+    fixture.create(manifest.runtimeClass.asInstanceOf[Class[T]])
   }
 
 }

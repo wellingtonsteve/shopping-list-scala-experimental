@@ -6,10 +6,10 @@ import scala.reflect.Manifest
 
 trait Guice {
   def getInstance[T <: AnyRef](implicit manifest: Manifest[T]): FromInjector[T] = {
-    new FromInjector[T](manifest.erasure.asInstanceOf[Class[T]])
+    new FromInjector[T](manifest.runtimeClass.asInstanceOf[Class[T]])
   }
-}
 
-class FromInjector[T <: AnyRef](clazz: Class[T]) {
-  def from(injector: Injector) : T = injector.getInstance(clazz)
+  class FromInjector[T <: AnyRef](clazz: Class[T]) {
+    def from(injector: Injector) : T = injector.getInstance(clazz)
+  }
 }

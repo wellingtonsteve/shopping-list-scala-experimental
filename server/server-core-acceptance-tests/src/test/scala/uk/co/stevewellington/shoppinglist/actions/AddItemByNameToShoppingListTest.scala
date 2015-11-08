@@ -1,8 +1,7 @@
 package uk.co.stevewellington.shoppinglist.actions
 
-import com.flextrade.jfixture.JFixture
+import com.google.inject.AbstractModule
 import com.google.inject.Guice.createInjector
-import com.google.inject.{Binder, AbstractModule, Guice}
 import org.junit.runner.RunWith
 import org.mockito.Mockito._
 import org.scalatest.junit.JUnitRunner
