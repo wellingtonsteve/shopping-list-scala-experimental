@@ -5,7 +5,7 @@ import com.google.inject.Injector
 import scala.reflect.Manifest
 
 trait Guice {
-  def getInjector[T <: AnyRef](implicit manifest: Manifest[T]): FromInjector[T] = {
+  def get[T <: AnyRef](implicit manifest: Manifest[T]): FromInjector[T] = {
     new FromInjector[T](manifest.runtimeClass.asInstanceOf[Class[T]])
   }
 
