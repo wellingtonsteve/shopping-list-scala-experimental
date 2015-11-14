@@ -1,11 +1,11 @@
-package uk.co.stevewellington.shoppinglist.actions
+package uk.co.stevewellington.shoppinglist.testutils
 
 import com.google.inject.Injector
 
 import scala.reflect.Manifest
 
 trait Guice {
-  def getInstance[T <: AnyRef](implicit manifest: Manifest[T]): FromInjector[T] = {
+  def getInjector[T <: AnyRef](implicit manifest: Manifest[T]): FromInjector[T] = {
     new FromInjector[T](manifest.runtimeClass.asInstanceOf[Class[T]])
   }
 

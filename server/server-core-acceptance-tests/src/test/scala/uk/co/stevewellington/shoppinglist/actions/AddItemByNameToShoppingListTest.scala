@@ -8,6 +8,7 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.mock.MockitoSugar
 import uk.co.stevewellington.shoppinglist.infrasctructure.ItemStore
 import uk.co.stevewellington.shoppinglist.model.ItemName
+import uk.co.stevewellington.shoppinglist.testutils.{Fixture, Guice, UnitSpec}
 
 @RunWith(classOf[JUnitRunner])
 class AddItemByNameToShoppingListTest extends UnitSpec with MockitoSugar with Fixture with Guice {

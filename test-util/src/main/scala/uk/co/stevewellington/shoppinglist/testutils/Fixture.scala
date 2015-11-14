@@ -1,4 +1,4 @@
-package uk.co.stevewellington.shoppinglist.actions
+package uk.co.stevewellington.shoppinglist.testutils
 
 import com.flextrade.jfixture.JFixture
 
