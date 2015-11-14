@@ -8,11 +8,11 @@ import uk.co.stevewellington.shoppinglist.actions.AddItemByNameToShoppingList
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @RunWith(classOf[JUnitRunner])
-class RestServerTest extends ScalatraSpec with MockitoSugar {
+class ItemsServletTest extends ScalatraSpec with MockitoSugar {
 
   val addItemByNameToShoppingListAction = mock[AddItemByNameToShoppingList]
 
-  addServlet(new RestServer(addItemByNameToShoppingListAction), "/*")
+  addServlet(new ItemsServlet(addItemByNameToShoppingListAction), "/*")
 
   describe("When adding an Item by name") {
     it("an Item should be created in the Store") {

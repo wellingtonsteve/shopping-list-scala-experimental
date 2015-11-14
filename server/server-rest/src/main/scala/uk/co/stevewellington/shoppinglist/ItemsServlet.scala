@@ -7,7 +7,7 @@ import uk.co.stevewellington.shoppinglist.actions.AddItemByNameToShoppingList
 import uk.co.stevewellington.shoppinglist.model.ItemName
 
 @Singleton
-class RestServer @Inject()(addItemByNameToShoppingListAction: AddItemByNameToShoppingList) extends ScalatraServlet {
+class ItemsServlet @Inject()(addItemByNameToShoppingListAction: AddItemByNameToShoppingList) extends ScalatraServlet {
 
   post("/items/:itemName") {
     val itemName = new ItemName(params("itemName"))
