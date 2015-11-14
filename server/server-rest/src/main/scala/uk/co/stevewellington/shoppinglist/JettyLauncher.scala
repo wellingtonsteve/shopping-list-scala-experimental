@@ -16,7 +16,7 @@ object JettyLauncher {
   handler.addFilter(classOf[GuiceFilter], "/*", allOf(classOf[DispatcherType]))
   handler.addEventListener(new MyGuiceServletConfig)
   server.setHandler(handler)
-  
+
   def main(args: Array[String]) {
     server.start()
     server.join()

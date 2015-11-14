@@ -10,6 +10,7 @@ trait Guice {
   }
 
   class FromInjector[T <: AnyRef](clazz: Class[T]) {
-    def from(injector: Injector) : T = injector.getInstance(clazz)
+    def from(injector: Injector): T = injector.getInstance(clazz)
   }
+
 }

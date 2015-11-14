@@ -9,13 +9,13 @@ import uk.co.stevewellington.shoppinglist.testutils.{ExceptionExpectations, Guic
 
 @RunWith(classOf[JUnitRunner])
 class JettyServerEndToEndTest extends FunSpecLike with Guice with ExceptionExpectations {
-  
+
   val injector = createInjector(new JettyServerModule)
-  
+
   describe("JettyServer instance") {
     it("can be created") {
-      expectNoExceptionsIn { 
-        get[ShoppingListServer] from injector 
+      expectNoExceptionsIn {
+        get[ShoppingListServer] from injector
       }
     }
   }

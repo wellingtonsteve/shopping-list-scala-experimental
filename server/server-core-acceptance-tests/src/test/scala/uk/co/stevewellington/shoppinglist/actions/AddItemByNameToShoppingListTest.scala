@@ -19,9 +19,9 @@ class AddItemByNameToShoppingListTest extends UnitSpec with MockitoSugar with Fi
   val injector = createInjector(new AbstractModule {
     override def configure() = bind(classOf[ItemStore]) toInstance itemStore
   })
-  
+
   val addItemByNameToShoppingList = get[AddItemByNameToShoppingList] from injector
-  
+
   describe("When adding an item by name") {
     it("AddItemByNameToShoppingList should create an item in the store") {
       addItemByNameToShoppingList.addItemByNameToShoppingList(itemName)
