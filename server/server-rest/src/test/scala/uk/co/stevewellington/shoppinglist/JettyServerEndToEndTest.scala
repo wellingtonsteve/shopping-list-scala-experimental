@@ -12,10 +12,11 @@ class JettyServerEndToEndTest extends FunSpecLike with Guice with ExceptionExpec
 
   val injector = createInjector(new JettyServerModule)
 
-  describe("JettyServer instance") {
-    it("can be created") {
+  describe("JettyServer instance") {    
+    it("can be started") {
       expectNoExceptionsIn {
-        get[ShoppingListServer] from injector
+        val server = get[ShoppingListServer] from injector
+        server.start()
       }
     }
   }
